@@ -11,32 +11,36 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :title %>
-    <%= form.text_field :title, id: :book_title %>
+    <%= form.text_field :title, id: :book_title, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :author %>
-    <%= form.text_field :author, id: :book_author %>
+    <%= form.text_field :author, id: :book_author, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :published_on %>
-    <%= form.date_select :published_on, id: :book_published_on %>
+    <%= form.date_select :published_on, id: :book_published_on, class:"form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :showing %>
     <%= form.check_box :showing, id: :book_showing %>
   </div>
 
-  <div class="field">
+  <div class="form-group">
     <%= form.label :price %>
-    <%= form.number_field :price, id: :book_price %>
+    <%= form.number_field :price, id: :book_price, class:"form-control" %>
+  </div>
+  
+  <div class="field">
+    <%= collection_check_boxes :book, :tag_ids, Tag.all, :id, :name %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%= form.submit class:"btn btn-primary" %>
   </div>
 <% end %>
